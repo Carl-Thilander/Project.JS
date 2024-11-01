@@ -1,0 +1,40 @@
+.headline{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: hsla(106, 85%, 37%, 0.411);
+}
+
+.textArea{
+    align-content: center;
+}
+
+.characterPic{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.characterPic h2{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    border-radius: 20px;
+    box-shadow: 10px 20px hsla(106, 85%, 37%, 0.315);
+}
+
+img:hover{
+    transform: scale(1.1);
+}
+
+.page {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
