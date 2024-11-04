@@ -27,14 +27,20 @@ img{
     box-shadow: 10px 20px hsla(106, 85%, 37%, 0.315);
 }
 
-img:hover{
-    transform: scale(1.1);
-}
-
 .page {
     display: none;
 }
 
 .visible {
     display: block;
+}
+
+.choose{
+    display: flex;
+    justify-content: center;
+}
+
+.femalePage{
+    display: flex;
+    flex-direction: column;
 }
