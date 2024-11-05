@@ -1,3 +1,9 @@
+window.addEventListener('DOMContentLoaded',main)
+
+function main() {
+
+}
+
 
 
 function navigate(pageId) {
@@ -5,4 +11,9 @@ function navigate(pageId) {
     pages.forEach(page=> page.classList.remove('visible'));
 
     document.getElementById(pageId).classList.add('visible');
-}
+}   /*Byter sida vid knapptryck till vald sida*/
+
+
+
+
+
