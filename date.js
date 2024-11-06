@@ -1,12 +1,16 @@
 window.addEventListener('DOMContentLoaded',main)
 
 function main() {
-    const date = new Date();
+    setInterval(renderTime,1000);
+}
 
+function renderTime(){
+    const date = new Date();
+    
     month.textContent = getMonthName(date);
     time.textContent = getTime(date);
     weekDay.textContent = getWeekDay(date);
-
+    week.textContent = getWeek(date);
 }
 
 function getMonthName(date) {
@@ -59,9 +63,18 @@ function getWeekDay(date) {
 
 function getTime(date) {
     const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    if (seconds < 10)
+        seconds = "0" + seconds;
+    if(minutes < 10)
+        minutes = "0" + minutes;
     return hours + ":" + minutes + ":" + seconds;
+}
+
+function getWeek(date) {
+    const 
+    const week = date.getWeek();
 }
 
 
