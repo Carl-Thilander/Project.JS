@@ -32,15 +32,12 @@ body {
 
 .pTag{
     width: 80%;
+    display: flex;
+    justify-content: center;
 }
 
 .characterPage img{
     height: 25rem;
-}
-
-.characterPage img:hover{
-    opacity: 0.8;
-    
 }
 
 .characterPage {
