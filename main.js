@@ -46,6 +46,9 @@ function goToNext2(){
 
     const contentDiv = document.getElementById("infoPage");
     contentDiv.appendChild(indianaPic);
+
+    option1.style.display = "block";
+    option1.textContent = "Press here to proceed";
 }
 
 function cleanSheet(){
