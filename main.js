@@ -9,6 +9,8 @@ const background = document.getElementById(infoPage);
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 
+
+
 function goToNext1(){
     cleanSheet();
     const headline = document.getElementById("headLine");
@@ -28,9 +30,6 @@ function goToNext1(){
     option1.style.display = "block";
     option1.textContent = "Press here to proceed";
 }
-    
-    
-    
 
 function goToNext2(){
     cleanSheet();
@@ -56,6 +55,17 @@ function cleanSheet(){
     pictures.forEach(Image => Image.remove());
     const removePara = document.getElementById("characterPage");
     removePara.textContent =""; //Tar bort beskrivningarna
+    
+}
+
+function loadFirstPage(){
+    cleanSheet();
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "You are currently by the beach"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="There are more than one way to find the island treasure. What path will you choose?"; //Nytt välkomstmeddelande
     
 }
 
