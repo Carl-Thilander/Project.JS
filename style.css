@@ -1,57 +1,93 @@
-.headline{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-body{
-    background-color: hsla(106, 85%, 37%, 0.411);
+body {
+    background-image: url(assets/background.webp);
+    background-size: cover;
+    background-position: center;
+
 }
 
-.textArea{
-    align-content: center;
-}
-
-.characterPic{
+.infoPage{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    margin-top: 50px;
-}
-
-.characterPic h2{
-    display: flex;
-    justify-content: center;
-}
-
-img{
+    align-items: center;
+    height: 70%;
+    width: 90%;
+    background-color: beige;
     border-radius: 20px;
 }
 
-.page {
-    display: none;
+.pTag{
+    width: 80%;
 }
 
-.visible {
-    display: block;
+.characterPage img{
+    height: 25rem;
 }
 
-.choose{
+.characterPage img:hover{
+    opacity: 0.8;
+    
+}
+
+.characterPage {
     display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.filler {
+    display: flex;
+    width: 20rem;
+    font-weight: 700;
     justify-content: center;
+    align-items: center;
 }
 
 .femalePage{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    max-width: 15rem;
+    text-align: left;
+    padding-right: 10px;
+    justify-content: space-between;
 }
 
 .malePage{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    max-width: 15rem;
+    text-align: left;
+    padding-left: 10px;
+    justify-content: space-between;
+    
 }
 
-.characterPic button{
-    background-color:darkolivegreen;
-    height: 40px;
-    margin-top: 10px;
-    color: white;
+.chooseCharacter {
+    width: 13rem;
+    height: 5rem;
+    background-color: rgba(35, 221, 106, 0.733);
+    font-size: larger;
+    font-family: cursive;
+    border-radius: 15px;
 }
+
+.chooseCharacter:hover{
+    opacity: 0.6;
+}
+
