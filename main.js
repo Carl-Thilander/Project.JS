@@ -5,43 +5,55 @@ function main(){
     button2.onclick = goToNext2;
 }
 
-const femalePic = getElementById("picture1");
-const malePic = getElementById("picture2");
+const background = document.getElementById(infoPage);
+const option1 = document.getElementById("option1");
+const option2 = document.getElementById("option2");
 
 function goToNext1(){
+    cleanSheet();
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "You have choosen Lara Soft!"; //Tar bort innehållet av ett element och ersätter
     
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Welcome Lara, I hope you are ready for an adventure!";
+    welcomeMessage.textContent ="Welcome Lara, I hope you are ready for an adventure!"; //Nytt välkomstmeddelande
+    const laraPic = document.createElement("img");
+    laraPic.src = "assets/Female.png";
+    laraPic.style.height = "20rem";
 
-    femalePic
+    const contentDiv = document.getElementById("infoPage");
+    contentDiv.appendChild(laraPic);
 
-    
-    
-    cleanSheet();
+    option1.style.display = "block";
+    option1.textContent = "Press here to proceed";
 }
+    
+    
+    
 
 function goToNext2(){
+    cleanSheet();
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "You have choosen Indiana Stones!"; //Tar bort innehållet av ett element och ersätter
-    cleanSheet();
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Welcome Indiana, I hope you are ready for an adventure!";
+    welcomeMessage.textContent ="Welcome Indiana, I hope you are ready for an adventure!"; //Nytt välkomstmeddelande
+    const indianaPic = document.createElement("img");
+    indianaPic.src = "assets/Male.png";
+    indianaPic.style.height = "20rem";
+
+    const contentDiv = document.getElementById("infoPage");
+    contentDiv.appendChild(indianaPic);
 }
 
 function cleanSheet(){
-    const pictures = document.querySelectorAll("img");
+    const pictures = document.querySelectorAll("img"); //Tar bort bilderna
     pictures.forEach(Image => Image.remove());
     const removePara = document.getElementById("characterPage");
-    removePara.textContent ="";
-    const characterPage = document.getElementById("characterPage");
-    const buttons = characterPage.querySelectorAll(".chooseCharacter");
-    buttons.forEach(button => characterPage.appendChild(button));
+    removePara.textContent =""; //Tar bort beskrivningarna
+    
 }
 
 

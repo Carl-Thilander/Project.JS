@@ -88,3 +88,25 @@ body {
     opacity: 0.6;
 }
 
+.option1{
+    padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      display: none;
+}
+
+.option2{
+    padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      display: none;
+}
+
