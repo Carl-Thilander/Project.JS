@@ -1,13 +1,30 @@
 window.addEventListener('DOMContentLoaded',main)
 
 function main(){
-    button1.onclick = goToNext1;
-    button2.onclick = goToNext2;
+    startingPage();
 }
 
-const background = document.getElementById(infoPage);
-const option1 = document.getElementById("option1");
-const option2 = document.getElementById("option2");
+
+function startingPage() {
+
+    
+
+    const laraPage = document.querySelector(".femalePage");
+    const knappLara = document.createElement("button");
+    knappLara.textContent = "Choose Lara";
+
+    const indyPage = document.querySelector(".malePage");
+    const knappIndy = document.createElement("button");
+    knappIndy.textContent = "Choose Indy";
+    
+    laraPage.appendChild(knappLara);
+    indyPage.appendChild(knappIndy);
+
+    knappLara.onclick = goToNext1;
+    knappIndy.onclick = goToNext2;
+
+    
+}
 
 
 
@@ -27,8 +44,13 @@ function goToNext1(){
     const contentDiv = document.getElementById("infoPage");
     contentDiv.appendChild(laraPic);
 
-    option1.style.display = "block";
-    option1.textContent = "Press here to proceed";
+    const knapp4 = document.createElement("button");
+    knapp4.innerText = "Proceed";
+    const infoPage = document.querySelector(".infoPage");
+    infoPage.appendChild(knapp4);
+    knapp4.onclick = loadFirstPage;
+
+   
 }
 
 function goToNext2(){
@@ -46,8 +68,16 @@ function goToNext2(){
     const contentDiv = document.getElementById("infoPage");
     contentDiv.appendChild(indianaPic);
 
-    option1.style.display = "block";
-    option1.textContent = "Press here to proceed";
+   
+
+    const knapp4 = document.createElement("button");
+    knapp4.innerText = "Proceed";
+    const infoPage = document.querySelector(".infoPage");
+    infoPage.appendChild(knapp4);
+
+    knapp4.onclick = loadFirstPage;
+    
+
 }
 
 function cleanSheet(){
@@ -55,10 +85,22 @@ function cleanSheet(){
     pictures.forEach(Image => Image.remove());
     const removePara = document.getElementById("characterPage");
     removePara.textContent =""; //Tar bort beskrivningarna
+
+
+   
+
     
 }
 
+function clearButtons (){
+    document.querySelector("button").innerHTML = "";
+}
+
+
+
+
 function loadFirstPage(){
+    clearButtons();
     cleanSheet();
     const headline = document.getElementById("headLine");
     headline.textContent = "";
@@ -66,8 +108,56 @@ function loadFirstPage(){
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="There are more than one way to find the island treasure. What path will you choose?"; //Nytt välkomstmeddelande
+   
+    
+
+
+
+    const space = document.getElementById("buttonPage");
+    const knapp1 = document.createElement("button");
+    knapp1.textContent = "A";
+    const knapp2 = document.createElement("button");
+    knapp2.textContent = "B";
+
+    space.appendChild(knapp1);
+    space.appendChild(knapp2);
+
+    knapp1.onclick = loadMountainPage;
+    knapp2.onclick = loadJunglePage;
+}
+
+function loadMountainPage(){
+    clearButtons();
+    cleanSheet();
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "Up in the Mountains"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="You are getting cold by the strong winds up here!"; //Nytt välkomstmeddelande
+
+
+    getElementById("body").style.backgroundImage = "url('assets/Mountain.webp')";
+    // background.src = "assets/Mountain.webp";
+    
+
+    // const contentDiv = document.getElementById("body");
+    // contentDiv.appendChild(background);
+    
     
 }
+
+function loadJunglePage(){
+    cleanSheet();
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "Deep in the Jungle"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Watch out for spiders!"; //Nytt välkomstmeddelande
+}
+
+
 
 
 
