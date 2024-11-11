@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+
+.background {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.content{
+    position: absolute;
+    height: 60%;
+    width: 80%;
+    background-color: antiquewhite;
+    border: black 2px solid;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+button {
+    width: 13rem;
+    height: 5rem;
+    background-color: rgba(35, 221, 106, 0.733);
+    font-size: larger;
+    font-family: cursive;
+    border-radius: 15px;
+}
+
+p {
+    width: 50% ;
+}
+
