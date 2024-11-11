@@ -4,6 +4,9 @@ function main(){
     loadFirstPage();
 }
 
+
+
+
 function loadFirstPage(){
     content.innerHTML ="";
    
@@ -44,10 +47,7 @@ function loadBeachScene() {
 
     const wallpaper = document.createElement("img");
     wallpaper.src = "assets/beach.webp";
-    const image1 = document.createElement("img");
-    image1.src = "assets/Male.png";
-    const image2 = document.createElement("img");
-    image2.src = "assets/Female.png";
+    
 
     background.append(wallpaper);
     content.append(rubrik,button1,button2);
@@ -71,7 +71,7 @@ function loadBeachScene() {
     button2.onclick = loadBeachScene;
 
     const wallpaper = document.createElement("img");
-    wallpaper.src = "assets/jungle.webp";
+    wallpaper.url = "assets/jungle.webp";
 
     content.append(rubrik, button1, button2);
     background.append(wallpaper);
