@@ -46,8 +46,8 @@ function goToNext1(){
 
     const knapp4 = document.createElement("button");
     knapp4.innerText = "Proceed";
-    const infoPage = document.querySelector(".infoPage");
-    infoPage.appendChild(knapp4);
+    const buttonPage = document.querySelector(".buttonClass");
+    buttonPage.appendChild(knapp4);
     knapp4.onclick = loadFirstPage;
 
    
@@ -72,8 +72,8 @@ function goToNext2(){
 
     const knapp4 = document.createElement("button");
     knapp4.innerText = "Proceed";
-    const infoPage = document.querySelector(".infoPage");
-    infoPage.appendChild(knapp4);
+    const buttonPage = document.querySelector(".buttonClass");
+    buttonPage.appendChild(knapp4);
 
     knapp4.onclick = loadFirstPage;
     
@@ -85,23 +85,18 @@ function cleanSheet(){
     pictures.forEach(Image => Image.remove());
     const removePara = document.getElementById("characterPage");
     removePara.textContent =""; //Tar bort beskrivningarna
-
-
-   
-
-    
+    buttonPage.textContent = ""; //Tar bort knapparna
 }
 
-function clearButtons (){
-    document.querySelector("button").innerHTML = "";
-}
+
 
 
 
 
 function loadFirstPage(){
-    clearButtons();
     cleanSheet();
+    
+
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "You are currently by the beach"; //Tar bort innehållet av ett element och ersätter
@@ -127,7 +122,6 @@ function loadFirstPage(){
 }
 
 function loadMountainPage(){
-    clearButtons();
     cleanSheet();
     const headline = document.getElementById("headLine");
     headline.textContent = "";
@@ -138,11 +132,6 @@ function loadMountainPage(){
 
 
     getElementById("body").style.backgroundImage = "url('assets/Mountain.webp')";
-    // background.src = "assets/Mountain.webp";
-    
-
-    // const contentDiv = document.getElementById("body");
-    // contentDiv.appendChild(background);
     
     
 }
@@ -155,6 +144,14 @@ function loadJunglePage(){
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Watch out for spiders!"; //Nytt välkomstmeddelande
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Go Left";
+
+    const button2 = document.createElement("button");
+    button2.textContent = "Go Right";
+
+    buttonPage.append(button1, button2);
 }
 
 
