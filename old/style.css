@@ -10,13 +10,15 @@ body, html{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
 body {
-    background-image: url(assets/background.webp);
     background-size: cover;
     background-position: center;
-
+    width: 100%;
+    position: relative;
+    transition: background-image 0.5s ease;
 }
 
 .infoPage{
@@ -24,10 +26,14 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 70%;
-    width: 90%;
+    min-height: 80%;
+    min-width: 40%;
     background-color: beige;
     border-radius: 20px;
+}
+
+.headLine {
+    padding: 10px;
 }
 
 .pTag{
@@ -38,6 +44,7 @@ body {
 
 .characterPage img{
     height: 25rem;
+    border: 1px black solid;
 }
 
 .characterPage {
@@ -75,7 +82,7 @@ body {
     
 }
 
-.chooseCharacter {
+button {
     width: 13rem;
     height: 5rem;
     background-color: rgba(35, 221, 106, 0.733);
@@ -84,29 +91,13 @@ body {
     border-radius: 15px;
 }
 
-.chooseCharacter:hover{
+button:hover{
     opacity: 0.6;
 }
 
-.option1{
-    padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-      display: none;
+.buttonClass{
+    display: flex;
+    gap: 30px;
 }
 
-.option2{
-    padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-      display: none;
-}
 
