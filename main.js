@@ -7,8 +7,6 @@ function main(){
 
 function startingPage() {
 
-    
-
     const laraPage = document.querySelector(".femalePage");
     const knappLara = document.createElement("button");
     knappLara.textContent = "Choose Lara";
@@ -22,8 +20,6 @@ function startingPage() {
 
     knappLara.onclick = goToNext1;
     knappIndy.onclick = goToNext2;
-
-    
 }
 
 
@@ -110,9 +106,9 @@ function loadFirstPage(){
 
     const space = document.getElementById("buttonPage");
     const knapp1 = document.createElement("button");
-    knapp1.textContent = "A";
+    knapp1.textContent = "Go up to the mountains";
     const knapp2 = document.createElement("button");
-    knapp2.textContent = "B";
+    knapp2.textContent = "Explore the jungle";
 
     space.appendChild(knapp1);
     space.appendChild(knapp2);
@@ -130,8 +126,18 @@ function loadMountainPage(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="You are getting cold by the strong winds up here!"; //Nytt välkomstmeddelande
 
+    const picture = document.createElement("img");
+    picture.src = "assets/Mountain.webp";
 
-    getElementById("body").style.backgroundImage = "url('assets/Mountain.webp')";
+    characterPage.appendChild(picture);
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Go Left";
+
+    const button2 = document.createElement("button");
+    button2.textContent = "Go Right";
+
+    buttonPage.append(button1, button2);
     
     
 }
@@ -144,6 +150,11 @@ function loadJunglePage(){
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Watch out for spiders!"; //Nytt välkomstmeddelande
+
+    const picture = document.createElement("img");
+    picture.src = "assets/Djungel.jpg";
+
+    characterPage.appendChild(picture);
 
     const button1 = document.createElement("button");
     button1.textContent = "Go Left";
