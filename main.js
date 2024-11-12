@@ -4,9 +4,24 @@ function main(){
     startingPage();
 }
 
+const backgrounds = [
+    "url('assets/background.webp')",
+    "url('assets/Djungel.jpg')",
+    "url('assets/Mountain.webp')",
+    "url('assets/beach.webp')",
+  ];
+
+function changeBackground(index) {
+    const bodyElement = document.body;
+
+    bodyElement.style.backgroundImage = backgrounds[index];
+
+}
+  
+
 
 function startingPage() {
-
+    changeBackground(0)
     const laraPage = document.querySelector(".femalePage");
     const knappLara = document.createElement("button");
     knappLara.textContent = "Choose Lara";
@@ -20,6 +35,7 @@ function startingPage() {
 
     knappLara.onclick = goToNext1;
     knappIndy.onclick = goToNext2;
+
 }
 
 
@@ -91,6 +107,7 @@ function cleanSheet(){
 
 function loadFirstPage(){
     cleanSheet();
+    changeBackground(3);
     
 
     const headline = document.getElementById("headLine");
@@ -119,6 +136,7 @@ function loadFirstPage(){
 
 function loadMountainPage(){
     cleanSheet();
+    changeBackground(2);
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "Up in the Mountains"; //Tar bort innehållet av ett element och ersätter
@@ -126,10 +144,6 @@ function loadMountainPage(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="You are getting cold by the strong winds up here!"; //Nytt välkomstmeddelande
 
-    const picture = document.createElement("img");
-    picture.src = "assets/Mountain.webp";
-
-    characterPage.appendChild(picture);
 
     const button1 = document.createElement("button");
     button1.textContent = "Go Left";
@@ -138,12 +152,11 @@ function loadMountainPage(){
     button2.textContent = "Go Right";
 
     buttonPage.append(button1, button2);
-    
-    
 }
 
 function loadJunglePage(){
     cleanSheet();
+    changeBackground(1);
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "Deep in the Jungle"; //Tar bort innehållet av ett element och ersätter
@@ -151,10 +164,9 @@ function loadJunglePage(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Watch out for spiders!"; //Nytt välkomstmeddelande
 
-    const picture = document.createElement("img");
-    picture.src = "assets/Djungel.jpg";
+    
 
-    characterPage.appendChild(picture);
+    
 
     const button1 = document.createElement("button");
     button1.textContent = "Go Left";
