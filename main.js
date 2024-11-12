@@ -15,7 +15,6 @@ function changeBackground(index) {
     const bodyElement = document.body;
 
     bodyElement.style.backgroundImage = backgrounds[index];
-
 }
   
 
@@ -37,8 +36,6 @@ function startingPage() {
     knappIndy.onclick = goToNext2;
 
 }
-
-
 
 function goToNext1(){
     cleanSheet();
@@ -99,11 +96,6 @@ function cleanSheet(){
     removePara.textContent =""; //Tar bort beskrivningarna
     buttonPage.textContent = ""; //Tar bort knapparna
 }
-
-
-
-
-
 
 function loadFirstPage(){
     cleanSheet();
