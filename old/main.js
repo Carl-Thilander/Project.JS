@@ -9,6 +9,7 @@ const backgrounds = [
     "url('/assets/Djungel.jpg')",
     "url('/assets/Mountain.webp')",
     "url('/assets/beach.webp')",
+    "url('/assets/Cave.webp')"
   ];
 
 function changeBackground(index) {
@@ -19,7 +20,11 @@ function changeBackground(index) {
 
 
 function startingPage() {
-    changeBackground(0)
+    changeBackground(0);
+
+    const homePage = document.getElementById("welcomePage");
+    const welcomeMessage = document.createElement("h3");
+    welcomeMessage.textContent = "Stranded and seeking fortune, you find yourself on the shores of a mysterious island after your ship broke down in uncharted waters. Legends speak of a hidden treasure buried deep within the island - anancient relic of unimaginable power, guarded by the island’s secrets and challenges. Will you uncover the truth and claim the treasure, or will the island’s mysteries claim you? Your adventure begins now."
     const laraPage = document.querySelector(".femalePage");
     const knappLara = document.createElement("button");
     knappLara.textContent = "Choose Lara";
@@ -30,6 +35,7 @@ function startingPage() {
     
     laraPage.appendChild(knappLara);
     indyPage.appendChild(knappIndy);
+    homePage.appendChild(welcomeMessage);
 
     knappLara.onclick = goToNext1;
     knappIndy.onclick = goToNext2;
@@ -133,16 +139,19 @@ function loadMountainPage(){
     headline.textContent = "Up in the Mountains"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="You are getting cold by the strong winds up here!"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent ="You are getting cold by the strong winds up here! Do you wish to seek shelter for the night or continue your journey?"; //Nytt välkomstmeddelande
 
 
     const button1 = document.createElement("button");
-    button1.textContent = "Go Left";
+    button1.textContent = "Seek shelter";
 
     const button2 = document.createElement("button");
-    button2.textContent = "Go Right";
+    button2.textContent = "Continue journey";
 
     buttonPage.append(button1, button2);
+
+    button1.onclick = loadShelterPage;
+    button2.onclick = loadSummitPage;
 }
 
 function loadJunglePage(){
@@ -155,10 +164,6 @@ function loadJunglePage(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. What path will you choose?"; //Nytt välkomstmeddelande
 
-    
-
-    
-
     const button1 = document.createElement("button");
     button1.textContent = "Follow the footsteps";
 
@@ -167,21 +172,39 @@ function loadJunglePage(){
 
     buttonPage.append(button1, button2);
 
-    button1.onclick = loadCavePage;
-    button2.onclick = loadFootStepPage;
+    button1.onclick = loadFootStepPage;
+    button2.onclick = loadCavePage;
 }
 
 
 function loadCavePage(){
     cleanSheet();
-    changeBackground();
+    changeBackground(4);
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "Inside the cave"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. What path will you choose?"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent ="The cave seems dark and abandon, do you wish to go deeper or turn back?"; //Nytt välkomstmeddelande
+
+    const picture = document.createElement("img");
+    picture.src = "/assets/Cave.webp";
+    picture.style.height = "20 rem";
+
+    characterPage.append(picture);
+
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Go deeper";
+
+    const button2 = document.createElement("button");
+    button2.textContent = "Turn back";
+
+    buttonPage.append(button1, button2);
+
+    button1.onclick = loadWinScene;
+    button2.onclick = loadJunglePage;
 
 }
 
@@ -192,10 +215,37 @@ function loadFootStepPage(){
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
-    headline.textContent = "Inside the cave"; //Tar bort innehållet av ett element och ersätter
+    headline.textContent = "House"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. What path will you choose?"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent ="You followed the footsteps for 2 miles, now you stop and see smoke emitting from a distance. Could it be more survivors?"; //Nytt välkomstmeddelande
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Follow the smoke";
+
+    const button2 = document.createElement("button");
+    button2.textContent = "Turn back";
+
+    buttonPage.append(button1, button2);
+
+    button1.onclick = loadEndScene;
+    button2.onclick = loadJunglePage;
+}
+
+function loadEndScene(){
+
+}
+
+function loadWinScene(){
+
+}
+
+function loadShelterPage(){
+    
+}
+
+function loadSummitPage(){
+
 }
 
 
