@@ -5,15 +5,14 @@ function main(){
 }
 
 const backgrounds = [
-    "url('assets/background.webp')",
-    "url('assets/Djungel.jpg')",
-    "url('assets/Mountain.webp')",
-    "url('assets/beach.webp')",
+    "url('/assets/background.webp')",
+    "url('/assets/Djungel.jpg')",
+    "url('/assets/Mountain.webp')",
+    "url('/assets/beach.webp')",
   ];
 
 function changeBackground(index) {
     const bodyElement = document.body;
-
     bodyElement.style.backgroundImage = backgrounds[index];
 }
   
@@ -42,12 +41,12 @@ function goToNext1(){
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "You have choosen Lara Soft!"; //Tar bort innehållet av ett element och ersätter
-    
+
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Welcome Lara, I hope you are ready for an adventure!"; //Nytt välkomstmeddelande
     const laraPic = document.createElement("img");
-    laraPic.src = "assets/Female.png";
+    laraPic.src = "/assets/Female.png";
     laraPic.style.height = "20rem";
 
     const contentDiv = document.getElementById("infoPage");
@@ -71,7 +70,7 @@ function goToNext2(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Welcome Indiana, I hope you are ready for an adventure!"; //Nytt välkomstmeddelande
     const indianaPic = document.createElement("img");
-    indianaPic.src = "assets/Male.png";
+    indianaPic.src = "/assets/Male.png";
     indianaPic.style.height = "20rem";
 
     const contentDiv = document.getElementById("infoPage");
@@ -154,19 +153,49 @@ function loadJunglePage(){
     headline.textContent = "Deep in the Jungle"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Watch out for spiders!"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent ="Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. What path will you choose?"; //Nytt välkomstmeddelande
 
     
 
     
 
     const button1 = document.createElement("button");
-    button1.textContent = "Go Left";
+    button1.textContent = "Follow the footsteps";
 
     const button2 = document.createElement("button");
-    button2.textContent = "Go Right";
+    button2.textContent = "Explore the cave";
 
     buttonPage.append(button1, button2);
+
+    button1.onclick = loadCavePage;
+    button2.onclick = loadFootStepPage;
+}
+
+
+function loadCavePage(){
+    cleanSheet();
+    changeBackground();
+
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "Inside the cave"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. What path will you choose?"; //Nytt välkomstmeddelande
+
+}
+
+
+function loadFootStepPage(){
+    cleanSheet();
+    changeBackground();
+
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "Inside the cave"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. What path will you choose?"; //Nytt välkomstmeddelande
 }
 
 
