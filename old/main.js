@@ -233,18 +233,62 @@ function loadFootStepPage(){
 }
 
 function loadEndScene(){
+    cleanSheet();
+    changeBackground();
 
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "With the tribe"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is dangerous tribe who doesnt take prisoners. You are now their dinner"; //Nytt välkomstmeddelande
 }
 
 function loadWinScene(){
+    cleanSheet();
+    changeBackground();
 
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "With the tribe"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is dangerous tribe who doesnt take prisoners. You are now their dinner";
 }
 
 function loadShelterPage(){
-    
+    cleanSheet();
+    changeBackground();
+
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "Under the tree"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Nicely done! You've managed to find shelter from the nights cold winds. Maybe you should get some rest and continue your adventure in the morning.";
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Have a goodnight sleep";
+
+    const button2 = document.createElement("button");
+    button2.textContent = "Get going";
+
+    buttonPage.append(button1, button2);
+
+
 }
 
 function loadSummitPage(){
+    cleanSheet();
+    changeBackground();
+
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "The mountain top"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Good job! You have made the summit and now the Island is at your feet! However there isnt that much to do here but to enjoy the view. You do however notice a path which leads down to a cave. On the other side of the mountain it appears to be an even quicker way down, looks more dangerous tho...";
+
 
 }
 
