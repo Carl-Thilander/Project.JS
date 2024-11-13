@@ -253,7 +253,7 @@ function loadWinScene(){
     headline.textContent = "With the tribe"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is dangerous tribe who doesnt take prisoners. You are now their dinner";
+    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is a dangerous tribe who doesnt take prisoners. You are now their dinner";
 }
 
 function loadShelterPage(){
@@ -289,7 +289,56 @@ function loadSummitPage(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Good job! You have made the summit and now the Island is at your feet! However there isnt that much to do here but to enjoy the view. You do however notice a path which leads down to a cave. On the other side of the mountain it appears to be an even quicker way down, looks more dangerous tho...";
 
+    const button1 = document.createElement("button");
+    button1.textContent = "Take the safe path down";
 
+    const button2 = document.createElement("button");
+    button2.textContent = "Im feeling lucky, I'll take the steep path!";
+
+    buttonPage.append(button1, button2);
+
+    button1.onclick = loadSafePage;
+    button2.onclick = loadMountainDrop;
+}
+
+function loadSafePage(){
+    cleanSheet();
+    changeBackground();
+
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "The mountain top"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Good job! You have made the summit and now the Island is at your feet! However there isnt that much to do here but to enjoy the view. You do however notice a path which leads down to a cave. On the other side of the mountain it appears to be an even quicker way down, looks more dangerous tho...";
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Take the safe path down";
+
+    const button2 = document.createElement("button");
+    button2.textContent = "Im feeling lucky, I'll take the steep path!";
+
+    buttonPage.append(button1, button2);
+}
+
+function loadMountainDrop(){
+    cleanSheet();
+    changeBackground();
+
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "YOU FELL FROM THE MOUNTAIN!!!!"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="You went downhill too fast and stumbled on some gravel. Needless to say, you didnt make the fall...";
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Start over";
+
+    
+    buttonPage.append(button1);
+
+    button1.onclick = startingPage;
 }
 
 
