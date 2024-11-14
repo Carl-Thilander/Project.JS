@@ -25,9 +25,23 @@ function changeBackground(index) {
 function startingPage() {
     changeBackground(0);
 
+    
     const homePage = document.getElementById("welcomePage");
     const welcomeMessage = document.createElement("h3");
-    welcomeMessage.textContent = "Stranded and seeking fortune, you find yourself on the shores of a mysterious island after your ship broke down in uncharted waters. Legends speak of a hidden treasure buried deep within the island - anancient relic of unimaginable power, guarded by the island’s secrets and challenges. Will you uncover the truth and claim the treasure, or will the island’s mysteries claim you? Your adventure begins now."
+    welcomeMessage.textContent = "Stranded and seeking fortune, you find yourself on the shores of a mysterious island after your ship broke down in uncharted waters. Legends speak of a hidden treasure buried deep within the island - anancient relic of unimaginable power, guarded by the island’s secrets and challenges. Will you uncover the truth and claim the treasure, or will the island’s mysteries claim you? Your adventure begins now.";
+    
+
+
+    const descriptionLara = document.createElement("p");
+    descriptionLara.textContent = "Description: Lara is a gentle yet resilient woman in her late 20s with bright, curious eyes and an unbreakable spirit. As a trained herbalist, she’s able to find healing resources in the island’s wild landscape, a skill that might keep her alive since the crash.";
+
+    const descriptionIndy = document.createElement("p");
+    descriptionIndy.textContent = "Description: Indiana, a rugged and resilient man in his 30s, has a natural sense of leadership and calm under pressure. With sharp green eyes and sun-weathered skin, he exudes strength and reliability. Once a navigator, he’s haunted by memories of the crash but determined to survive.";
+    
+    const choose = document.querySelector(".filler");
+    const chooseCharacter = document.createElement("h2");
+    chooseCharacter.textContent = "Choose your character!";
+
     const laraPage = document.querySelector(".femalePage");
     const knappLara = document.createElement("button");
     knappLara.textContent = "Choose Lara";
@@ -35,10 +49,22 @@ function startingPage() {
     const indyPage = document.querySelector(".malePage");
     const knappIndy = document.createElement("button");
     knappIndy.textContent = "Choose Indy";
+
+    const laraPic = document.createElement("img");
+    laraPic.src = "/assets/Female.png";
+    laraPic.style.height = "25rem";
+    picture1.append(laraPic);
+
+    const indyPic = document.createElement("img");
+    indyPic.src = "/assets/Male.png";
+    indyPic.style.height = "25rem";
+    picture2.append(indyPic);
+
     
-    laraPage.appendChild(knappLara);
-    indyPage.appendChild(knappIndy);
+    laraPage.append(descriptionLara, knappLara);
+    indyPage.append(descriptionIndy, knappIndy);
     homePage.appendChild(welcomeMessage);
+    choose.append(chooseCharacter);
 
     knappLara.onclick = goToNext1;
     knappIndy.onclick = goToNext2;

@@ -110,7 +110,7 @@ button:hover{
     background-color: black;
     display: none; /* Göm overlay från början */
     z-index: 9999; /* Lägg den över allt annat */
-    transition: 0.5 ease-in-out;
+    transition: 1s ease;
 }
 
 
