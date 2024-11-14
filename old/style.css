@@ -101,4 +101,16 @@ button:hover{
     gap: 30px;
 }
 
+#napPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: none; /* Göm overlay från början */
+    z-index: 9999; /* Lägg den över allt annat */
+    transition: 0.5 ease-in-out;
+}
+
 

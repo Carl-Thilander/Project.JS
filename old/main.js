@@ -9,7 +9,10 @@ const backgrounds = [
     "url('/assets/Djungel.jpg')",
     "url('/assets/Mountain.webp')",
     "url('/assets/beach.webp')",
-    "url('/assets/Cave.webp')"
+    "url('/assets/Cave.webp')",
+    "url('/assets/nighttime.jpg')",
+    "url('/assets/sunrise.jpg')",
+    "url('/assets/path.jpg')",
   ];
 
 function changeBackground(index) {
@@ -211,14 +214,16 @@ function loadCavePage(){
 
 function loadFootStepPage(){
     cleanSheet();
-    changeBackground();
+    changeBackground(7);
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
-    headline.textContent = "House"; //Tar bort innehållet av ett element och ersätter
+    headline.textContent = "On the path"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="You followed the footsteps for 2 miles, now you stop and see smoke emitting from a distance. Could it be more survivors?"; //Nytt välkomstmeddelande
+
+
 
     const button1 = document.createElement("button");
     button1.textContent = "Follow the smoke";
@@ -241,7 +246,15 @@ function loadEndScene(){
     headline.textContent = "With the tribe"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is dangerous tribe who doesnt take prisoners. You are now their dinner"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is a dangerous tribe who doesnt take prisoners. You are now their dinner"; //Nytt välkomstmeddelande
+    const picture = document.createElement("img");
+    picture.src = "/assets/dinner.jpg";
+    picture.style.height = "20 rem";
+    characterPage.append(picture);
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Try again";
+    buttonPage.append(button1);
 }
 
 function loadWinScene(){
@@ -250,15 +263,25 @@ function loadWinScene(){
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
-    headline.textContent = "With the tribe"; //Tar bort innehållet av ett element och ersätter
+    headline.textContent = "You made it!"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is a dangerous tribe who doesnt take prisoners. You are now their dinner";
+    welcomeMessage.textContent ="Congratulations on your big adventure and finally managed to find the treasure!";
+
+    const picture = document.createElement("img");
+    picture.src = "/assets/Treasure.jpg";
+    picture.style.height = "20 rem";
+
+    characterPage.append(picture);
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Play again";
+    buttonPage.append(button1);
 }
 
 function loadShelterPage(){
     cleanSheet();
-    changeBackground();
+    changeBackground(5);
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
@@ -269,12 +292,41 @@ function loadShelterPage(){
 
     const button1 = document.createElement("button");
     button1.textContent = "Have a goodnight sleep";
+    buttonPage.append(button1);
 
-    const button2 = document.createElement("button");
-    button2.textContent = "Get going";
+    button1.onclick = sleepPage;
+    
 
-    buttonPage.append(button1, button2);
 
+}
+
+function sleepPage(){
+    document.getElementById("napPage").style.display = "block";
+    setTimeout(function(){
+        document.getElementById("napPage").style.display = "none";
+    }, 3000);
+
+    cleanSheet();
+    changeBackground(6);
+
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "Early bird gets the worm"; //Tar bort innehållet av ett element och ersätter
+    const welcomeMessage = document.getElementById("welcomePage");
+    welcomeMessage.textContent ="";
+    welcomeMessage.textContent ="Good morning! No time to spare, get some grub and find that treasure!";
+
+    const picture = document.createElement("img");
+    picture.src = "/assets/sunrise.jpg";
+    picture.style.height = "20 rem";
+
+    characterPage.append(picture);
+
+    const button1 = document.createElement("button");
+    button1.textContent = "Continue adventure";
+    buttonPage.append(button1);
+
+    button1.onclick = loadJunglePage;
 
 }
 
