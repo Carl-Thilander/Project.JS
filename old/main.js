@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded',main)
+window.addEventListener('DOMContentLoaded',main);
 
 function main(){
     startingPage();
@@ -30,8 +30,6 @@ function startingPage() {
     const welcomeMessage = document.createElement("h3");
     welcomeMessage.textContent = "Stranded and seeking fortune, you find yourself on the shores of a mysterious island after your ship broke down in uncharted waters. Legends speak of a hidden treasure buried deep within the island - anancient relic of unimaginable power, guarded by the island’s secrets and challenges. Will you uncover the truth and claim the treasure, or will the island’s mysteries claim you? Your adventure begins now.";
     
-
-
     const descriptionLara = document.createElement("p");
     descriptionLara.textContent = "Description: Lara is a gentle yet resilient woman in her late 20s with bright, curious eyes and an unbreakable spirit. As a trained herbalist, she’s able to find healing resources in the island’s wild landscape, a skill that might keep her alive since the crash.";
 
@@ -94,7 +92,7 @@ function goToNext1(){
     knapp4.onclick = loadFirstPage;
 
    
-}
+} //Färdig, ev. styling
 
 function goToNext2(){
     cleanSheet();
@@ -121,7 +119,7 @@ function goToNext2(){
     knapp4.onclick = loadFirstPage;
     
 
-}
+} //färdig, ev. styling
 
 function cleanSheet(){
     const pictures = document.querySelectorAll("img"); //Tar bort bilderna
@@ -129,7 +127,7 @@ function cleanSheet(){
     const removePara = document.getElementById("characterPage");
     removePara.textContent =""; //Tar bort beskrivningarna
     buttonPage.textContent = ""; //Tar bort knapparna
-}
+} //Se över om cS kan användas i startingPage. annars färdig
 
 function loadFirstPage(){
     cleanSheet();
@@ -158,7 +156,7 @@ function loadFirstPage(){
 
     knapp1.onclick = loadMountainPage;
     knapp2.onclick = loadJunglePage;
-}
+} //Färdig
 
 function loadMountainPage(){
     cleanSheet();
@@ -181,7 +179,7 @@ function loadMountainPage(){
 
     button1.onclick = loadShelterPage;
     button2.onclick = loadSummitPage;
-}
+} //Färdig
 
 function loadJunglePage(){
     cleanSheet();
@@ -203,7 +201,7 @@ function loadJunglePage(){
 
     button1.onclick = loadFootStepPage;
     button2.onclick = loadCavePage;
-}
+}//Färdig
 
 
 function loadCavePage(){
@@ -223,7 +221,6 @@ function loadCavePage(){
 
     characterPage.append(picture);
 
-
     const button1 = document.createElement("button");
     button1.textContent = "Go deeper";
 
@@ -235,7 +232,7 @@ function loadCavePage(){
     button1.onclick = loadWinScene;
     button2.onclick = loadJunglePage;
 
-}
+}//Färdig
 
 
 function loadFootStepPage(){
@@ -249,8 +246,6 @@ function loadFootStepPage(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="You followed the footsteps for 2 miles, now you stop and see smoke emitting from a distance. Could it be more survivors?"; //Nytt välkomstmeddelande
 
-
-
     const button1 = document.createElement("button");
     button1.textContent = "Follow the smoke";
 
@@ -261,7 +256,7 @@ function loadFootStepPage(){
 
     button1.onclick = loadEndScene;
     button2.onclick = loadJunglePage;
-}
+} //Färdig
 
 function loadEndScene(){
     cleanSheet();
@@ -281,7 +276,7 @@ function loadEndScene(){
     const button1 = document.createElement("button");
     button1.textContent = "Try again";
     buttonPage.append(button1);
-}
+} //Fixa onclick till första sidan
 
 function loadWinScene(){
     cleanSheet();
@@ -303,7 +298,7 @@ function loadWinScene(){
     const button1 = document.createElement("button");
     button1.textContent = "Play again";
     buttonPage.append(button1);
-}
+} //Fixa onclick till första sidan
 
 function loadShelterPage(){
     cleanSheet();
@@ -344,7 +339,8 @@ function sleepPage(){
 
     const picture = document.createElement("img");
     picture.src = "/assets/sunrise.jpg";
-    picture.style.height = "20 rem";
+    picture.style.width = "5 rem";
+    
 
     characterPage.append(picture);
 

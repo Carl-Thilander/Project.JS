@@ -26,9 +26,9 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    min-height: 80%;
-    min-width: 40%;
-    max-width: 80%;
+    min-height: 60%;
+    min-width: 20%;
+    max-width: 90%;
     background-color: beige;
     border-radius: 20px;
 }
@@ -107,9 +107,9 @@ button:hover{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
-    display: none; /* Göm overlay från början */
-    z-index: 9999; /* Lägg den över allt annat */
+    background-color: rgb(0, 0, 0);
+    display: none;
+    z-index: 9999; 
     transition: 1s ease;
 }
 
