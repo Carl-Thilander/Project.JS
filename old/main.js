@@ -13,28 +13,50 @@ const backgrounds = [
     "url('/assets/nighttime.jpg')",
     "url('/assets/sunrise.jpg')",
     "url('/assets/path.jpg')",
+    "url('/assets/mountain-bottom.avif')",
+
   ];
 
 function changeBackground(index) {
     const bodyElement = document.body;
     bodyElement.style.backgroundImage = backgrounds[index];
 }
-  
-
 
 function startingPage() {
     changeBackground(0);
 
+    const headline = document.getElementById("headLine");
+    headline.textContent = "";
+    headline.textContent = "Welcome to the Island!";
+
+    const outputLara = document.querySelector(".femalePage");
+    const name1 = document.createElement("h2");
+    name1.textContent = "Lara Soft";
+    outputLara.append(name1);
+
+    const outputIndy = document.querySelector(".malePage");
+    const name2 = document.createElement("h2");
+    name2.textContent = "Indiana Stones";
+    outputIndy.append(name2);
+
     
     const homePage = document.getElementById("welcomePage");
     const welcomeMessage = document.createElement("h3");
-    welcomeMessage.textContent = "Stranded and seeking fortune, you find yourself on the shores of a mysterious island after your ship broke down in uncharted waters. Legends speak of a hidden treasure buried deep within the island - anancient relic of unimaginable power, guarded by the island’s secrets and challenges. Will you uncover the truth and claim the treasure, or will the island’s mysteries claim you? Your adventure begins now.";
+    welcomeMessage.textContent = 
+    `Stranded and seeking fortune, you find yourself on the shores of a mysterious island after your ship broke down in uncharted waters.
+    Legends speak of a hidden treasure buried deep within the island - anancient relic of unimaginable power, guarded by the island’s secrets and challenges.
+    Will you uncover the truth and claim the treasure, or will the island’s mysteries claim you? Your adventure begins now.`;
     
     const descriptionLara = document.createElement("p");
-    descriptionLara.textContent = "Description: Lara is a gentle yet resilient woman in her late 20s with bright, curious eyes and an unbreakable spirit. As a trained herbalist, she’s able to find healing resources in the island’s wild landscape, a skill that might keep her alive since the crash.";
+    descriptionLara.textContent =
+    `Description: Lara is a gentle yet resilient woman in her late 20s with bright, curious eyes and an unbreakable spirit. 
+    As a trained herbalist, she’s able to find healing resources in the island’s wild landscape, a skill that might keep her alive since the crash.`;
 
     const descriptionIndy = document.createElement("p");
-    descriptionIndy.textContent = "Description: Indiana, a rugged and resilient man in his 30s, has a natural sense of leadership and calm under pressure. With sharp green eyes and sun-weathered skin, he exudes strength and reliability. Once a navigator, he’s haunted by memories of the crash but determined to survive.";
+    descriptionIndy.textContent = 
+    `Description: Indiana, a rugged and resilient man in his 30s, has a natural sense of leadership and calm under pressure. 
+    With sharp green eyes and sun-weathered skin, he exudes strength and reliability. 
+    Once a navigator, he’s haunted by memories of the crash but determined to survive.`;
     
     const choose = document.querySelector(".filler");
     const chooseCharacter = document.createElement("h2");
@@ -166,7 +188,9 @@ function loadMountainPage(){
     headline.textContent = "Up in the Mountains"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="You are getting cold by the strong winds up here! Do you wish to seek shelter for the night or continue your journey?"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent =
+    `You are getting cold by the strong winds up here! 
+    Do you wish to seek shelter for the night or continue your journey?`; //Nytt välkomstmeddelande
 
 
     const button1 = document.createElement("button");
@@ -189,7 +213,9 @@ function loadJunglePage(){
     headline.textContent = "Deep in the Jungle"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. What path will you choose?"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent =
+    `Watch out for spiders! After fighting off some spiders you see a trail of footstep on your right and to your left you can see a cave entrance. 
+    What path will you choose?`; //Nytt välkomstmeddelande
 
     const button1 = document.createElement("button");
     button1.textContent = "Follow the footsteps";
@@ -244,7 +270,9 @@ function loadFootStepPage(){
     headline.textContent = "On the path"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="You followed the footsteps for 2 miles, now you stop and see smoke emitting from a distance. Could it be more survivors?"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent =
+    `You followed the footsteps for 2 miles, now you stop and see smoke emitting from a distance. 
+    Could it be more survivors... or worse?`; //Nytt välkomstmeddelande
 
     const button1 = document.createElement("button");
     button1.textContent = "Follow the smoke";
@@ -267,7 +295,10 @@ function loadEndScene(){
     headline.textContent = "With the tribe"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Unfortunately for you, this is as far as outsiders come. On this Island there is a dangerous tribe who doesnt take prisoners. You are now their dinner"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent =
+    `Unfortunately for you, this is as far as outsiders come. 
+    On this Island there is a dangerous tribe who doesnt take prisoners. 
+    You are now their dinner`; //Nytt välkomstmeddelande
     const picture = document.createElement("img");
     picture.src = "/assets/dinner.jpg";
     picture.style.height = "20 rem";
@@ -309,7 +340,9 @@ function loadShelterPage(){
     headline.textContent = "Under the tree"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Nicely done! You've managed to find shelter from the nights cold winds. Maybe you should get some rest and continue your adventure in the morning.";
+    welcomeMessage.textContent =
+    `Nicely done! You've managed to find shelter from the nights cold winds. 
+    Maybe you should get some rest and continue your adventure in the morning.`;
 
     const button1 = document.createElement("button");
     button1.textContent = "Have a goodnight sleep";
@@ -339,7 +372,7 @@ function sleepPage(){
 
     const picture = document.createElement("img");
     picture.src = "/assets/sunrise.jpg";
-    picture.style.width = "5 rem";
+    picture.style.width = "30rem";
     
 
     characterPage.append(picture);
@@ -361,7 +394,10 @@ function loadSummitPage(){
     headline.textContent = "The mountain top"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Good job! You have made the summit and now the Island is at your feet! However there isnt that much to do here but to enjoy the view. You do however notice a path which leads down to a cave. On the other side of the mountain it appears to be an even quicker way down, looks more dangerous tho...";
+    welcomeMessage.textContent =`Good job! You have made the summit and now the Island is at your feet! 
+    However there isnt that much to do here but to enjoy the view. 
+    You do however notice a path which leads down to a cave. 
+    On the other side of the mountain it appears to be an even quicker way down, looks more dangerous tho...`;
 
     const button1 = document.createElement("button");
     button1.textContent = "Take the safe path down";
@@ -377,22 +413,27 @@ function loadSummitPage(){
 
 function loadSafePage(){
     cleanSheet();
-    changeBackground();
+    changeBackground(8);
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
-    headline.textContent = "The mountain top"; //Tar bort innehållet av ett element och ersätter
+    headline.textContent = "Ground level"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="Good job! You have made the summit and now the Island is at your feet! However there isnt that much to do here but to enjoy the view. You do however notice a path which leads down to a cave. On the other side of the mountain it appears to be an even quicker way down, looks more dangerous tho...";
+    welcomeMessage.textContent =
+    `Smart decision, you would most likely been hurt if you've taken the steep path!
+    Do you wish to take a moment to rest your eyes after the climb or keep going?`;
 
     const button1 = document.createElement("button");
-    button1.textContent = "Take the safe path down";
+    button1.textContent = "Take a nap";
 
     const button2 = document.createElement("button");
-    button2.textContent = "Im feeling lucky, I'll take the steep path!";
+    button2.textContent = "Continue restlessy";
 
     buttonPage.append(button1, button2);
+
+    button1.onclick = sleepPage;
+    button2.onclick = loadJunglePage;
 }
 
 function loadMountainDrop(){
