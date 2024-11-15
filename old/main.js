@@ -24,6 +24,7 @@ function changeBackground(index) {
 
 function startingPage() {
     changeBackground(0);
+ 
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
@@ -104,7 +105,7 @@ function goToNext1(){
     laraPic.src = "/assets/Female.png";
     laraPic.style.height = "20rem";
 
-    const contentDiv = document.getElementById("infoPage");
+    const contentDiv = document.getElementById("characterPage");
     contentDiv.appendChild(laraPic);
 
     const knapp4 = document.createElement("button");
@@ -128,7 +129,7 @@ function goToNext2(){
     indianaPic.src = "/assets/Male.png";
     indianaPic.style.height = "20rem";
 
-    const contentDiv = document.getElementById("infoPage");
+    const contentDiv = document.getElementById("characterPage");
     contentDiv.appendChild(indianaPic);
 
    
@@ -145,10 +146,19 @@ function goToNext2(){
 
 function cleanSheet(){
     const pictures = document.querySelectorAll("img"); //Tar bort bilderna
-    pictures.forEach(Image => Image.remove());
+    // pictures.forEach(Image => Image.remove());
     const removePara = document.getElementById("characterPage");
     removePara.textContent =""; //Tar bort beskrivningarna
     buttonPage.textContent = ""; //Tar bort knapparna
+
+    // const emptyHead = document.getElementById("headLine");
+    // const emptyWelcome = document.getElementById("welcomePage");
+    // const emptyCharacter = document.getElementById("characterPage");
+
+    // emptyHead.textContent = "";
+    // emptyWelcome.textContent = "";
+    // emptyCharacter.textContent = "";
+
 } //Se över om cS kan användas i startingPage. annars färdig
 
 function loadFirstPage(){
@@ -161,7 +171,10 @@ function loadFirstPage(){
     headline.textContent = "You are currently by the beach"; //Tar bort innehållet av ett element och ersätter
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
-    welcomeMessage.textContent ="There are more than one way to find the island treasure. What path will you choose?"; //Nytt välkomstmeddelande
+    welcomeMessage.textContent =
+    `It´s time for your first decision. 
+    There are more than one way to find the island treasure. 
+    What path will you choose?`; //Nytt välkomstmeddelande
    
     
 
@@ -244,6 +257,7 @@ function loadCavePage(){
     const picture = document.createElement("img");
     picture.src = "/assets/Cave.webp";
     picture.style.height = "20 rem";
+    picture.style.borderRadius = "10rem";
 
     characterPage.append(picture);
 
@@ -298,7 +312,7 @@ function loadEndScene(){
     welcomeMessage.textContent =
     `Unfortunately for you, this is as far as outsiders come. 
     On this Island there is a dangerous tribe who doesnt take prisoners. 
-    You are now their dinner`; //Nytt välkomstmeddelande
+    You are now their dinner.`; //Nytt välkomstmeddelande
     const picture = document.createElement("img");
     picture.src = "/assets/dinner.jpg";
     picture.style.height = "20 rem";
@@ -307,6 +321,8 @@ function loadEndScene(){
     const button1 = document.createElement("button");
     button1.textContent = "Try again";
     buttonPage.append(button1);
+
+    button1.onclick = loadFirstPage;
 } //Fixa onclick till första sidan
 
 function loadWinScene(){
@@ -329,6 +345,8 @@ function loadWinScene(){
     const button1 = document.createElement("button");
     button1.textContent = "Play again";
     buttonPage.append(button1);
+
+    button1.onclick = loadFirstPage;
 } //Fixa onclick till första sidan
 
 function loadShelterPage(){
@@ -370,12 +388,10 @@ function sleepPage(){
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Good morning! No time to spare, get some grub and find that treasure!";
 
-    const picture = document.createElement("img");
-    picture.src = "/assets/sunrise.jpg";
-    picture.style.width = "30rem";
+    
     
 
-    characterPage.append(picture);
+   
 
     const button1 = document.createElement("button");
     button1.textContent = "Continue adventure";
@@ -453,7 +469,7 @@ function loadMountainDrop(){
     
     buttonPage.append(button1);
 
-    button1.onclick = startingPage;
+    button1.onclick = loadFirstPage;
 }
 
 
