@@ -24,7 +24,6 @@ function changeBackground(index) {
 
 function startingPage() {
     changeBackground(0);
- 
 
     const headline = document.getElementById("headLine");
     headline.textContent = "";
@@ -112,9 +111,8 @@ function goToNext1(){
     knapp4.innerText = "Proceed";
     const buttonPage = document.querySelector(".buttonClass");
     buttonPage.appendChild(knapp4);
+    
     knapp4.onclick = loadFirstPage;
-
-   
 } //Färdig, ev. styling
 
 function goToNext2(){
@@ -122,6 +120,7 @@ function goToNext2(){
     const headline = document.getElementById("headLine");
     headline.textContent = "";
     headline.textContent = "You have choosen Indiana Stones!"; //Tar bort innehållet av ett element och ersätter
+
     const welcomeMessage = document.getElementById("welcomePage");
     welcomeMessage.textContent ="";
     welcomeMessage.textContent ="Welcome Indiana, I hope you are ready for an adventure!"; //Nytt välkomstmeddelande
@@ -132,32 +131,22 @@ function goToNext2(){
     const contentDiv = document.getElementById("characterPage");
     contentDiv.appendChild(indianaPic);
 
-   
-
     const knapp4 = document.createElement("button");
     knapp4.innerText = "Proceed";
     const buttonPage = document.querySelector(".buttonClass");
     buttonPage.appendChild(knapp4);
 
     knapp4.onclick = loadFirstPage;
-    
-
 } //färdig, ev. styling
 
 function cleanSheet(){
     const pictures = document.querySelectorAll("img"); //Tar bort bilderna
-    // pictures.forEach(Image => Image.remove());
+    pictures.forEach(Image => Image.remove());
     const removePara = document.getElementById("characterPage");
     removePara.textContent =""; //Tar bort beskrivningarna
     buttonPage.textContent = ""; //Tar bort knapparna
 
-    // const emptyHead = document.getElementById("headLine");
-    // const emptyWelcome = document.getElementById("welcomePage");
-    // const emptyCharacter = document.getElementById("characterPage");
-
-    // emptyHead.textContent = "";
-    // emptyWelcome.textContent = "";
-    // emptyCharacter.textContent = "";
+   
 
 } //Se över om cS kan användas i startingPage. annars färdig
 
@@ -176,10 +165,6 @@ function loadFirstPage(){
     There are more than one way to find the island treasure. 
     What path will you choose?`; //Nytt välkomstmeddelande
    
-    
-
-
-
     const space = document.getElementById("buttonPage");
     const knapp1 = document.createElement("button");
     knapp1.textContent = "Go up to the mountains";
@@ -204,7 +189,6 @@ function loadMountainPage(){
     welcomeMessage.textContent =
     `You are getting cold by the strong winds up here! 
     Do you wish to seek shelter for the night or continue your journey?`; //Nytt välkomstmeddelande
-
 
     const button1 = document.createElement("button");
     button1.textContent = "Seek shelter";
